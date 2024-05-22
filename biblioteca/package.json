@@ -1,0 +1,6 @@
+{
+    "scripts": {
+      "start": "./mvnw spring-boot:run"
+    }
+  }
+  
