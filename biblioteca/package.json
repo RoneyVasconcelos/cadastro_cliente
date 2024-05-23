@@ -1,9 +1,0 @@
-{
-    "name": "cadastro_cliente",
-    "version": "1.0.0",
-    "scripts": {
-      "prestart": "chmod +x mvnw",
-      "start": "./mvnw spring-boot:run"
-    }
-  }
-  
