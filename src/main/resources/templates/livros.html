@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Livros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Lista de Livros</h1>
+        <div th:if="${#lists.isEmpty(livros)}">
+            <p>Nenhum livro cadastrado.</p>
+        </div>
+        <div th:unless="${#lists.isEmpty(livros)}">
+            <ul>
+                <li th:each="livro : ${livros}">
+                    <span th:text="${livro.titulo}">Título</span> - <span th:text="${livro.autor}">Autor</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
