@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.exemplo.biblioteca.model.Usuario;
 import com.exemplo.biblioteca.service.UsuarioService;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @Controller
 @RequestMapping("/usuarios")
@@ -44,7 +42,7 @@ public class UsuarioController {
 
     @GetMapping("/editar/{id}")
     public String mostrarFormEdicao(@PathVariable Long id, Model model) {
-        Usuario usuario = usuarioService.buscarPorId(id);
+        Usuario usuario = usuarioService.buscarPorId(id).orElse(null);
         if (usuario != null) {
             model.addAttribute("usuario", usuario);
             return "usuario-form";
@@ -57,10 +55,4 @@ public class UsuarioController {
         usuarioService.deletar(id);
         return "redirect:/usuarios";
     }
-
-    @GetMapping("path")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-    
 }

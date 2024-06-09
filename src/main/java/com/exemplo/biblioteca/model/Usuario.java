@@ -15,7 +15,7 @@ public class Usuario {
     private String telefone;
     private String cpf;
 
-    // Getters e Setters
+    // Getters e setters
     public Long getId() {
         return id;
     }
